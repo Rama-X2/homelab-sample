@@ -67,9 +67,9 @@ Proyek ini adalah frontend murni, sehingga sangat mudah untuk dijalankan:
 
 1.  **Clone repositori ini:**
     ```bash
-    git clone https://github.com/hasbihasbullh/pojokcoffee.git
+    git clone https://github.com/pojokcoffee/pojokcoffee.git
     ```
-    (Ganti `hasbihasbullh` dengan username GitHub Anda)
+    (Ganti `pojokcoffee` dengan username GitHub Anda)
 
 2.  **Masuk ke direktori proyek:**
     ```bash
@@ -131,8 +131,9 @@ Proyek ini dilisensikan di bawah [MIT License](LICENSE).
 
 Jika Anda memiliki pertanyaan atau saran, jangan ragu untuk menghubungi kami:
 
-*   **Email**: mhasbihasbullah@gmail.com
-*   **GitHub**: [hasbihasbullh](https://github.com/hasbihasbullh)
+*   **Email**: hello@pojokcoffee.co.id
+*   **WhatsApp**: [+62 857-9518-5561](https://wa.me/6285795185561)
+*   **GitHub**: [pojokcoffee](https://github.com/pojokcoffee)
 
 ---
 

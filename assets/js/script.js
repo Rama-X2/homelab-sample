@@ -59,41 +59,46 @@ document.addEventListener("DOMContentLoaded", function () {
   // Fungsi untuk membuat HTML card produk
   function createProductCard(product) {
     return `
-      <div class="group flex flex-col bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300">
-        <div class="relative">
-          <div class="aspect-square overflow-hidden rounded-t-xl">
-            <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
-                 src="${product.image}"
-                 alt="${product.name}">
+      <div class="premium-card flex flex-col group">
+        <div class="relative overflow-hidden aspect-square">
+          <img class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+               src="${product.image}"
+               alt="${product.name}">
+          <!-- Rating badge -->
+          <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-xs py-1 px-2.5 rounded-full text-xs font-semibold text-[#6D3D18] flex items-center gap-1 shadow-xs">
+            <svg class="size-3 fill-current text-yellow-500" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            4.8
           </div>
         </div>
 
-        <div class="p-4 flex-grow">
-          <h3 class="font-semibold text-lg text-black mb-1">
-            ${product.name}
-          </h3>
-          <p class="text-sm text-gray-600 mb-2">
-            ${product.tastingNotes}
-          </p>
-          <div class="flex justify-between items-center mt-2">
-            <div>
-              <div class="flex justify-between items-center text-xs text-gray-600">
-                <span class="mr-2">Origin:</span>
-                <span class="font-medium text-black">${product.origin}</span>
-              </div>
-              <div class="flex justify-between items-center text-xs text-gray-600">
-                <span class="mr-2">Region:</span>
-                <span class="font-medium text-black">${product.region}</span>
-              </div>
-            </div>
-            <p class="font-bold text-lg text-black">
-              Rp ${product.price.toLocaleString("id-ID")}
+        <div class="p-5 flex-grow flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-semibold text-[#C19A6B] tracking-wider uppercase">${product.category || 'Biji Kopi'}</span>
+            <h3 class="font-bold text-xl text-[#2A1A0F] mt-1 mb-2 group-hover:text-[#6D3D18] transition-colors duration-200">
+              ${product.name}
+            </h3>
+            <p class="text-xs text-[#605248] italic mb-4">
+              Notes: ${product.tastingNotes}
             </p>
           </div>
+          
+          <div class="space-y-3 pt-3 border-t border-[#F0ECE6]">
+            <div class="flex justify-between items-center text-xs text-gray-500">
+              <span>Asal / Wilayah:</span>
+              <span class="font-semibold text-black">${product.origin} (${product.region.split(',')[0]})</span>
+            </div>
+            
+            <div class="flex justify-between items-center pt-1">
+              <span class="text-xs text-gray-500">Harga:</span>
+              <span class="font-bold text-lg text-[#6D3D18]">
+                Rp ${product.price.toLocaleString("id-ID")}
+              </span>
+            </div>
+          </div>
         </div>
 
-        <div class="p-4 pt-0">
-          <a class="block w-full py-2 px-4 text-center text-sm font-medium rounded-lg bg-[#6D3D18] hover:bg-[#5A3214] text-white transition-colors duration-200"
+        <div class="px-5 pb-5">
+          <a class="block w-full py-2.5 px-4 text-center text-sm font-semibold rounded-xl bg-[#6D3D18] hover:bg-[#5A3214] text-white transition-all duration-300 hover:shadow-md hover:shadow-[#6D3D18]/10"
              href="product-detail.html?id=${product.id}">
             Lihat Detail
           </a>
